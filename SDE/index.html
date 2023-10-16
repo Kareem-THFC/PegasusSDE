@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sass/main.css" />
+    <link rel="icon" href="img/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
+    />
+    <title>Pegasus-DashBoard</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h2 class="welcome">
+          Welcome,&nbsp;<span class="welcome__name">Kareem Hamdan</span>
+        </h2>
+
+        <span id="date" class="date">7th/Oct/2023</span>
+      </header>
+
+      <nav class="sidebar">
+        <div class="sidebar__header">
+          <h3 class="sidebar__name">PEGASUS</h3>
+        </div>
+        <ul class="sidebar__links">
+          <li class="sidebar__item">
+            <a
+              href="#dashboard"
+              class="sidebar__link sidebar__item--active"
+              id="dashboard__button"
+              data-tab="dashboard"
+            >
+              <svg class="sidebar__icon">
+                <use xlink:href="img/sprite.svg#icon-meter"></use>
+              </svg>
+              <span>dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a
+              href="#customers"
+              class="sidebar__link"
+              id="customers__button"
+              data-tab="customers"
+            >
+              <svg class="sidebar__icon">
+                <use xlink:href="img/sprite.svg#icon-user"></use>
+              </svg>
+              <span>Customers</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#cars" class="sidebar__link" data-tab="cars">
+              <svg class="sidebar__icon">
+                <use xlink:href="img/sprite.svg#icon-automobile"></use>
+              </svg>
+              <span>Vehicles</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a
+              href="#rentals"
+              class="sidebar__link"
+              id="rentals__button"
+              data-tab="rentals"
+            >
+              <svg class="sidebar__icon">
+                <use xlink:href="img/sprite.svg#icon-key"></use>
+              </svg>
+              <span>Rentals</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a
+              href="#add"
+              class="sidebar__link"
+              id="add__button"
+              data-tab="add"
+            >
+              <svg class="sidebar__icon">
+                <use xlink:href="img/sprite.svg#icon-plus"></use>
+              </svg>
+              <span>Add</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="content">
+        <div id="loader" class="loader"></div>
+        <div
+          class="dashboard content__dashboard content__main content__active"
+          id="dashboard"
+        >
+          <div class="dashboard__container">
+            <div class="dashboard__box--small">
+              <svg class="dashboard__icon">
+                <use xlink:href="img/sprite.svg#icon-user"></use>
+              </svg>
+              <h2 class="dashboard__box--header">
+                Total Customers : <span id="total__customers">40</span>
+              </h2>
+              <div class="dashboard__box--added">
+                <svg class="dashboard__icon--small">
+                  <use xlink:href="img/sprite.svg#icon-trending-up"></use>
+                </svg>
+                <h3 class="dashboard__new">
+                  New Customers : <span id="added__customers">30</span>
+                </h3>
+              </div>
+            </div>
+            <div class="dashboard__box--small">
+              <svg class="dashboard__icon">
+                <use xlink:href="img/sprite.svg#icon-automobile"></use>
+              </svg>
+              <h2 class="dashboard__box--header">
+                Total Vehicles: <span id="total__cars">50</span>
+              </h2>
+              <div class="dashboard__box--added">
+                <svg class="dashboard__icon--small">
+                  <use xlink:href="img/sprite.svg#icon-trending-up"></use>
+                </svg>
+                <h3 class="dashboard__new">
+                  New Vehicles : <span id="added__cars">30</span>
+                </h3>
+              </div>
+            </div>
+            <div class="dashboard__box--small">
+              <svg class="dashboard__icon">
+                <use xlink:href="img/sprite.svg#icon-key"></use>
+              </svg>
+              <h2 class="dashboard__box--header">
+                Total Rentals : <span id="total__rentals">60</span>
+              </h2>
+              <div class="dashboard__box--added">
+                <svg class="dashboard__icon--small">
+                  <use xlink:href="img/sprite.svg#icon-trending-up"></use>
+                </svg>
+                <h3 class="dashboard__new">
+                  Rentals This Week : <span id="added__rentals">10</span>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard__main">
+            <h2 class="dashboard__header">Active Rentals</h2>
+            <table class="dashboard__table" width="100%">
+              <thead>
+                <tr>
+                  <td class="dashboard__table--header">First Name</td>
+                  <td class="dashboard__table--header">Last Name</td>
+                  <td class="dashboard__table--header">Car Brand</td>
+                  <td class="dashboard__table--header">Car Model</td>
+                  <td class="dashboard__table--header">Return Date</td>
+                  <td class="dashboard__table--header">Full Price</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_first">John</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_last">Doe</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_brand">Mercedes</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_model">Benz</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_date">29/Oct</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_price">599$</h5>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_first">Kareem</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_last">Hamdan</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_brand">Audi</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_model">R8</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_date">17/Nov</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_price">1093$</h5>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_first">Harry</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_last">Kane</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_brand">Totota</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_model">Camry</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_date">23/Oct</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_price">206$</h5>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_first">Robert</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_last">Smith</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_brand">Mercedes</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_model">E200</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_date">18/Oct</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_price">603$</h5>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="chart__container">
+              <table
+                class="charts-css column show-heading show-labels show-primary-axis multiple show-data-on-hover data-spacing-10"
+              >
+                <caption class="chart__header">
+                  Our Rentals In The Last 5 Months
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Month</th>
+                    <th scope="col">Progress</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="chart__label">Jun</th>
+                    <td
+                      style="--size: 0.45; --color: #735f32"
+                      class="chart__bar"
+                    >
+                      <span class="data"> 45 </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="chart__label">Jul</th>
+                    <td
+                      style="--size: 0.15; --color: #1b2e3c"
+                      class="chart__bar"
+                    >
+                      <span class="data"> 15 </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="chart__label">Aug</th>
+                    <td
+                      style="--size: 0.32; --color: #4b0000"
+                      class="chart__bar"
+                    >
+                      <span class="data"> 32 </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="chart__label">Sep</th>
+                    <td
+                      style="--size: 0.6; --color: #3c2a21"
+                      class="chart__bar"
+                    >
+                      <span class="data"> 60 </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="chart__label">Oct</th>
+                    <td
+                      style="--size: 0.9; --color: #282a3a"
+                      class="chart__bar"
+                    >
+                      <span class="data"> 90 </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <section id="customers" class="content__customers content__main">
+          <div class="customers">
+            <table class="customers__table">
+              <caption class="customers__caption">
+                Customers Information
+              </caption>
+              <tr class="customers__hrow">
+                <th class="customers__hhead">Customer's ID</th>
+                <th class="customers__hhead">First Name</th>
+                <th class="customers__hhead">Last Name</th>
+                <th class="customers__hhead">License Number</th>
+                <th class="customers__hhead">Total Rentals</th>
+              </tr>
+
+              <tr class="customers__brow">
+                <td class="customers__bdata">01</td>
+                <td class="customers__bdata">Kareem</td>
+                <td class="customers__bdata">Hamdan</td>
+                <td class="customers__bdata">AAA 123</td>
+                <td class="customers__bdata">6</td>
+              </tr>
+
+              <tr class="customers__brow">
+                <td class="customers__bdata">01</td>
+                <td class="customers__bdata">Kareem</td>
+                <td class="customers__bdata">Hamdan</td>
+                <td class="customers__bdata">AAA 123</td>
+                <td class="customers__bdata">6</td>
+              </tr>
+
+              <tr class="customers__brow">
+                <td class="customers__bdata">01</td>
+                <td class="customers__bdata">Kareem</td>
+                <td class="customers__bdata">Hamdan</td>
+                <td class="customers__bdata">AAA 123</td>
+                <td class="customers__bdata">6</td>
+              </tr>
+
+              <tr class="customers__brow">
+                <td class="customers__bdata">01</td>
+                <td class="customers__bdata">Kareem</td>
+                <td class="customers__bdata">Hamdan</td>
+                <td class="customers__bdata">AAA 123</td>
+                <td class="customers__bdata">6</td>
+              </tr>
+
+              <tr class="customers__brow">
+                <td class="customers__bdata">01</td>
+                <td class="customers__bdata">Kareem</td>
+                <td class="customers__bdata">Hamdan</td>
+                <td class="customers__bdata">AAA 123</td>
+                <td class="customers__bdata">6</td>
+              </tr>
+
+              <tr class="customers__brow">
+                <td class="customers__bdata">01</td>
+                <td class="customers__bdata">Kareem</td>
+                <td class="customers__bdata">Hamdan</td>
+                <td class="customers__bdata">AAA 123</td>
+                <td class="customers__bdata">6</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <section id="cars" class="content__cars content__main">
+          <div class="cars">
+            <table class="cars__table">
+              <caption class="cars__caption">
+                Vehicles Information
+              </caption>
+              <tr class="cars__hrow">
+                <th class="cars__hhead">Vehicle's ID</th>
+                <th class="cars__hhead">Vehicle Type</th>
+                <th class="cars__hhead">Brand</th>
+                <th class="cars__hhead">Model</th>
+                <th class="cars__hhead">Daily Rate</th>
+              </tr>
+
+              <tr class="cars__brow">
+                <td class="cars__bdata">01</td>
+                <td class="cars__bdata">Car</td>
+                <td class="cars__bdata">Mercedes</td>
+                <td class="cars__bdata">Benz</td>
+                <td class="cars__bdata">200$</td>
+              </tr>
+
+              <tr class="cars__brow">
+                <td class="cars__bdata">01</td>
+                <td class="cars__bdata">Car</td>
+                <td class="cars__bdata">Mercedes</td>
+                <td class="cars__bdata">Benz</td>
+                <td class="cars__bdata">200$</td>
+              </tr>
+              <tr class="cars__brow">
+                <td class="cars__bdata">01</td>
+                <td class="cars__bdata">Car</td>
+                <td class="cars__bdata">Mercedes</td>
+                <td class="cars__bdata">Benz</td>
+                <td class="cars__bdata">200$</td>
+              </tr>
+              <tr class="cars__brow">
+                <td class="cars__bdata">01</td>
+                <td class="cars__bdata">Car</td>
+                <td class="cars__bdata">Mercedes</td>
+                <td class="cars__bdata">Benz</td>
+                <td class="cars__bdata">200$</td>
+              </tr>
+              <tr class="cars__brow">
+                <td class="cars__bdata">01</td>
+                <td class="cars__bdata">Car</td>
+                <td class="cars__bdata">Mercedes</td>
+                <td class="cars__bdata">Benz</td>
+                <td class="cars__bdata">200$</td>
+              </tr>
+
+              <tr class="cars__brow">
+                <td class="cars__bdata">01</td>
+                <td class="cars__bdata">Car</td>
+                <td class="cars__bdata">Mercedes</td>
+                <td class="cars__bdata">Benz</td>
+                <td class="cars__bdata">200$</td>
+              </tr>
+              <tr class="cars__brow">
+                <td class="cars__bdata">01</td>
+                <td class="cars__bdata">Car</td>
+                <td class="cars__bdata">Mercedes</td>
+                <td class="cars__bdata">Benz</td>
+                <td class="cars__bdata">200$</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

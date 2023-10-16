@@ -1,0 +1,10 @@
+.box{
+    margin: 0 auto;
+    position: absolute;
+    &__white{
+        text-align: center;
+        background-color: white;
+        display: inline-block;
+        padding: 0.3rem 2rem;
+    }
+}

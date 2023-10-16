@@ -1,0 +1,140 @@
+.btn{
+    z-index: 0;
+
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 2.5rem 4rem;
+        display: inline-block;
+        border-radius: 0;
+        border: solid $color-black 0.2rem;
+        transition: all .2s;
+        position: relative;
+        font-size: $default-fount-size;
+
+        //Change for the <button> element
+        
+        cursor: pointer;
+    }
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+    
+    &--maroon {
+        background-color: $color-maroon;
+        color: $color-white-section;
+        word-spacing: .4rem;
+
+        &::after {
+            background-color: $color-maroon;
+        }
+    }
+
+    &--cream{
+        background-color: #D5CEA3 ;
+        color: $color-secondary-dark;
+        word-spacing:0.4rem ;
+
+        &::after {
+            background-color: #D5CEA3;
+        }
+    }
+
+    &--red{
+        background-color: $color-red-card2 ;
+        color: $color-white-section;
+        word-spacing:0.4rem ;
+
+        &::after {
+            background-color: $color-red-card2;
+        }
+    }
+
+    &--gold{
+        background-color: #8c672c ;
+        color: $color-white-section;
+        word-spacing:0.4rem ;
+
+        &::after {
+            background-color: #8c672c;
+        }
+    }
+
+    &--white {
+        background-color: rgba($color-white-section,0.85);
+        color: $color-maroon;
+        word-spacing: .4rem;
+
+        &::after,&::before {
+            background-color: rgba($color-white-section,0.85);
+        }
+    }
+
+   
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text{
+    &:link,
+    &:visited{
+        text-decoration: none;
+        color:$color-maroon;
+        font-size: $default-fount-size;
+        border-bottom: 0.1rem solid $color-maroon;
+        padding:0.3rem;
+        display: inline-block;
+        transition: all .2s;
+        padding: .5rem 1rem;
+        padding-left: 0.4rem;
+    }
+
+    &:hover{
+        background-color: $color-maroon;
+        color: white;
+        transform: translateY(-0.2rem);
+        box-shadow: 0rem 1rem 2rem rgba(black, 0.2);
+    }
+
+    &:active{
+        transform: translateY(-0.1rem);
+        box-shadow: 0rem .5rem 1rem rgba(black, 0.2);
+    }
+
+    &__transparent{
+        
+        background-color: rgba(white, 0.6);
+        padding: 1rem 2.7rem;
+    }
+}

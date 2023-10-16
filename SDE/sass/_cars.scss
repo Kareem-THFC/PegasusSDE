@@ -1,0 +1,47 @@
+.cars {
+  width: 90%;
+  background-color: $color-white;
+  border-radius: 1.5rem;
+  margin: 5rem auto;
+
+  &__table {
+    width: 100%;
+    padding: 2rem;
+    border-left: none;
+    border-right: none;
+  }
+
+  &__hrow {
+  }
+
+  &__hhead {
+    color: $color-grey-100;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-bottom: 2rem;
+  }
+
+  &__brow {
+    text-align: center;
+    font-size: 1.7rem;
+    color: $color-grey-100;
+  }
+
+  &__bdata {
+    border-bottom: 0.1rem solid $color-maroon;
+    border-right: none;
+    padding: 1.5rem;
+    &:not(:last-child) {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__caption {
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 600;
+
+    color: $color-maroon;
+    padding: 2rem 0rem;
+  }
+}
