@@ -29,10 +29,12 @@ public class CarController {
     public void registerNewcar(@RequestBody car car1) {
         carService.addNewcar(car1);
 
+
+
         }
 
 
-
-    }
+}
+    
 
 
