@@ -32,9 +32,21 @@ public class CarController {
 
 
         }
+@DeleteMapping(path = "carid")
+    public void deletecar(@PathVariable("carid")Long carid) {
+        carService.deletecar(carid);
 
+
+}@PutMapping(path = "carid")
+public void updatecar(
+        @PathVariable("carid")Long carid,
+        @RequestParam(required = false) String model)
+
+    {
+        carService.updatecar(carid,model);
+    }
 
 }
-    
+
 
 
