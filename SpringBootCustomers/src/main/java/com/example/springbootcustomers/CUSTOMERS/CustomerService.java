@@ -53,6 +53,12 @@ public class CustomerService {
                 !Objects.equals(customer.getLast_Name(), lastName)) {
             customer.setLast_Name(lastName);
         }
+        
+        if (licenseNumber != null &&
+                licenseNumber.length() > 0 &&
+                !Objects.equals(customer.getLicense_Number(), licenseNumber)) {
+            customer.setLicense_Number(licenseNumber);
+        }
     }
 }
 
