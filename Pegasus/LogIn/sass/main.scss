@@ -1,0 +1,260 @@
+$color-black: rgb(0, 0, 0);
+$color-maroon: #530607;
+
+$color-dark-grey: rgb(93, 93, 93);
+$color-white-section: #c2c8ba;
+$color-white2-section: #a1a49d;
+$color-dark-maroon: #1a1010;
+
+$color-secondary-light: #1a120b;
+$color-secondary-dark: #3c2a21;
+
+$color-red-card2: #4b0000;
+$color-navy-card2: #1b2e3c;
+$color-black-card2: #0c0c1e;
+
+$color-black-card3: #0b0b0b;
+$color-grey-card3: #282a3a;
+$color-gold-card3: #735f32;
+
+$color-black-book: #171717;
+$color-grey-book: #6c7665;
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  // This defines what 1rem is
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  background-color: rgba(23, 23, 23);
+  color: rgba(23, 23, 23);
+  font-family: "Playfair Display", serif;
+  line-height: 1.7;
+}
+
+.flex {
+}
+
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba(83, 6, 7, 0.65) 0%,
+      rgba(83, 6, 7, 0.87) 50%,
+      rgba(23, 23, 23, 0.95) 50%,
+      rgba(23, 23, 23, 0.65) 100%
+    ),
+    url("/LogIn/sass/book-img-city.jpg");
+  background-size: 100%;
+  object-fit: cover;
+  height: 80vh;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  margin: 7rem;
+  display: flex;
+  align-items: center;
+}
+
+.book__form {
+  width: 50%;
+  padding: 6rem;
+}
+
+.form {
+  display: block;
+  &__input {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    font-family: inherit;
+    color: inherit;
+    background-color: rgba($color-white-section, 0.75);
+    border: none;
+    border-bottom: 4px solid transparent;
+    width: 90%;
+    display: block;
+    transition: all 0.3s;
+
+    &::-webkit-input-placeholder {
+      color: rgba(23, 23, 23);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 0.4rem solid #00092c;
+    }
+
+    &:focus:invalid {
+      border-bottom: 0.4rem solid $color-secondary-dark;
+    }
+  }
+
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    color: rgba(23, 23, 23);
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown ~ &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3rem);
+  }
+}
+
+.heading-secondary {
+  font-size: 2.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 3rem;
+  background-image: linear-gradient(
+    to right,
+    $color-maroon,
+    $color-dark-maroon
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+
+.heading-transparent {
+  color: rgba(white, 0.6);
+}
+
+.btn {
+  z-index: 0;
+
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 2.5rem 4rem;
+    display: inline-block;
+    border-radius: 0;
+    border: solid $color-black 0.2rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1rem;
+
+    //Change for the <button> element
+
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--maroon {
+    background-color: $color-maroon;
+    color: $color-white-section;
+    word-spacing: 0.4rem;
+
+    &::after {
+      background-color: $color-maroon;
+    }
+  }
+
+  &--cream {
+    background-color: #d5cea3;
+    color: $color-secondary-dark;
+    word-spacing: 0.4rem;
+
+    &::after {
+      background-color: #d5cea3;
+    }
+  }
+
+  &--red {
+    background-color: $color-red-card2;
+    color: $color-white-section;
+    word-spacing: 0.4rem;
+
+    &::after {
+      background-color: $color-red-card2;
+    }
+  }
+
+  &--gold {
+    background-color: #8c672c;
+    color: $color-white-section;
+    word-spacing: 0.4rem;
+
+    &::after {
+      background-color: #8c672c;
+    }
+  }
+
+  &--white {
+    background-color: rgba($color-white-section, 0.85);
+    color: $color-maroon;
+    word-spacing: 0.4rem;
+
+    &::after,
+    &::before {
+      background-color: rgba($color-white-section, 0.85);
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn-wide {
+  padding: 1.5rem 5.5rem;
+  height: 5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}

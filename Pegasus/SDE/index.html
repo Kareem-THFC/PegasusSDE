@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sass/main.css" />
+    <link rel="icon" href="img/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
+    />
+    <title>Pegasus-DashBoard</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h2 class="welcome">
+          Welcome,&nbsp;<span class="welcome__name">Rami</span>
+        </h2>
+
+        <span id="date" class="date">7th/Oct/2023</span>
+      </header>
+
+      <nav class="sidebar">
+        <div class="sidebar__header">
+          <h3 class="sidebar__name">PEGASUS</h3>
+        </div>
+        <ul class="sidebar__links">
+          <li class="sidebar__item">
+            <a
+              href="#dashboard"
+              class="sidebar__link sidebar__item--active"
+              id="dashboard__button"
+              data-tab="dashboard"
+            >
+              <svg class="sidebar__icon">
+                <use xlink:href="img/sprite.svg#icon-meter"></use>
+              </svg>
+              <span>dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a
+              href="#customers"
+              class="sidebar__link"
+              id="customers__button"
+              data-tab="customers"
+            >
+              <svg class="sidebar__icon">
+                <use xlink:href="img/sprite.svg#icon-user"></use>
+              </svg>
+              <span>Customers</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a
+              href="#cars"
+              class="sidebar__link"
+              id="cars__button"
+              data-tab="cars"
+            >
+              <svg class="sidebar__icon">
+                <use xlink:href="img/sprite.svg#icon-automobile"></use>
+              </svg>
+              <span>Vehicles</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a
+              href="#rentals"
+              class="sidebar__link"
+              id="rentals__button"
+              data-tab="rentals"
+            >
+              <svg class="sidebar__icon">
+                <use xlink:href="img/sprite.svg#icon-key"></use>
+              </svg>
+              <span>Rentals</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a
+              href="#add"
+              class="sidebar__link"
+              id="add__button"
+              data-tab="add"
+            >
+              <svg class="sidebar__icon">
+                <use xlink:href="img/sprite.svg#icon-plus"></use>
+              </svg>
+              <span>Add</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="content">
+        <div id="loader" class="loader"></div>
+        <div
+          class="dashboard content__dashboard content__main content__active"
+          id="dashboard"
+        >
+          <div class="dashboard__container">
+            <div class="dashboard__box--small">
+              <div class="dashboard__box--small--bg">
+                <img
+                  src="img/customer.png"
+                  class="dashboard__box--small--img"
+                />
+              </div>
+              <svg class="dashboard__icon">
+                <use xlink:href="img/sprite.svg#icon-user"></use>
+              </svg>
+              <h2 class="dashboard__box--header">
+                Total Customers : <span id="total__customers">40</span>
+              </h2>
+              <div class="dashboard__box--added">
+                <svg class="dashboard__icon--small">
+                  <use xlink:href="img/sprite.svg#icon-trending-up"></use>
+                </svg>
+                <h3 class="dashboard__new">
+                  New Customers : <span id="added__customers"></span>
+                </h3>
+              </div>
+            </div>
+            <div class="dashboard__box--small">
+              <div class="dashboard__box--small--bg">
+                <img src="img/car.jpg" class="dashboard__box--small--img" />
+              </div>
+              <svg class="dashboard__icon">
+                <use xlink:href="img/sprite.svg#icon-automobile"></use>
+              </svg>
+              <h2 class="dashboard__box--header">
+                Total Vehicles: <span id="total__cars">50</span>
+              </h2>
+              <div class="dashboard__box--added">
+                <svg class="dashboard__icon--small">
+                  <use xlink:href="img/sprite.svg#icon-trending-up"></use>
+                </svg>
+                <h3 class="dashboard__new">
+                  New Vehicles : <span id="added__cars"></span>
+                </h3>
+              </div>
+            </div>
+            <div class="dashboard__box--small">
+              <div class="dashboard__box--small--reminder">
+                <svg class="dashboard__icon">
+                  <use xlink:href="img/sprite.svg#icon-add_alarm"></use>
+                </svg>
+                <h2
+                  class="dashboard__box--header dashboard__box--small--reminder--header"
+                >
+                  Reminders
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard__main">
+            <h2 class="dashboard__header">Active Rentals</h2>
+            <table class="dashboard__table" width="100%">
+              <thead>
+                <tr>
+                  <td class="dashboard__table--header">First Name</td>
+                  <td class="dashboard__table--header">Last Name</td>
+                  <td class="dashboard__table--header">Car Brand</td>
+                  <td class="dashboard__table--header">Car Model</td>
+                  <td class="dashboard__table--header">Return Date</td>
+                  <td class="dashboard__table--header">Full Price</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_first">George</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_last">Washington</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_brand">Ford</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_model">Mustang</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_date">2023-11-28</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_price">450$</h5>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_first">Alex</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_last">Bellingham</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_brand">Bentley</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_model">Continental GT</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_date">2023-12-07</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_price">1750$</h5>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_first">Rami</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_last">Kaawache</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_brand">Rolls-Royce</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_model">Phantom</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_date">2023-11-30</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_price">2500$</h5>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_first">Jack</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_last">Simpson</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_brand">Lamborghini</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_model">Aventador</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_date">2023-11-30</h5>
+                  </td>
+                  <td class="dashboard__table--content">
+                    <h5 id="customer_price">3500$</h5>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="chart__container">
+              <table
+                class="charts-css column show-heading show-labels show-primary-axis multiple show-data-on-hover data-spacing-10"
+              >
+                <caption class="chart__header">
+                  Our Rentals In The Last 5 Months
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Month</th>
+                    <th scope="col">Progress</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="chart__label">Jul</th>
+                    <td
+                      style="--size: 0.45; --color: #735f32"
+                      class="chart__bar"
+                    >
+                      <span class="data"> 5 </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="chart__label">Aug</th>
+                    <td
+                      style="--size: 0.15; --color: #1b2e3c"
+                      class="chart__bar"
+                    >
+                      <span class="data"> 1 </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="chart__label">Sep</th>
+                    <td
+                      style="--size: 0.32; --color: #4b0000"
+                      class="chart__bar"
+                    >
+                      <span class="data"> 2 </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="chart__label">Oct</th>
+                    <td
+                      style="--size: 0.6; --color: #3c2a21"
+                      class="chart__bar"
+                    >
+                      <span class="data"> 3 </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="chart__label">Nov</th>
+                    <td
+                      style="--size: 0.9; --color: #282a3a"
+                      class="chart__bar"
+                    >
+                      <span class="data"> 4 </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <section id="customers" class="content__customers content__main">
+          <div class="customers">
+            <table class="customers__table">
+              <caption class="customers__caption">
+                Customers Information
+              </caption>
+              <tr class="customers__hrow">
+                <th class="customers__hhead">Customer's ID</th>
+                <th class="customers__hhead">First Name</th>
+                <th class="customers__hhead">Last Name</th>
+                <th class="customers__hhead">License Number</th>
+                <th class="customers__hhead">Actions</th>
+              </tr>
+              <tbody class="customers__body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="cars" class="content__cars content__main">
+          <div class="cars">
+            <table class="cars__table">
+              <caption class="cars__caption">
+                Vehicles Information
+              </caption>
+              <tr class="cars__hrow">
+                <th class="cars__hhead">Vehicle's ID</th>
+                <th class="cars__hhead">Brand</th>
+                <th class="cars__hhead">Model</th>
+                <th class="cars__hhead">Color</th>
+                <th class="cars__hhead">Daily Rate</th>
+                <th class="cars__hhead">Actions</th>
+              </tr>
+              <tbody class="cars__body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="rentals" class="content__rentals content__main">
+          <div class="customers">
+            <table class="customers__table">
+              <caption class="customers__caption">
+                Rentals Information
+              </caption>
+              <tr class="customers__hrow">
+                <th class="customers__hhead">First Name</th>
+                <th class="customers__hhead">Last Name</th>
+                <th class="customers__hhead">Car Brand</th>
+                <th class="customers__hhead">Car Model</th>
+                <th class="customers__hhead">Rental Date</th>
+                <th class="customers__hhead">Return Date</th>
+                <th class="customers__hhead">Total Price</th>
+              </tr>
+              <tbody class="rentals__body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="add" class="content__add content__main">
+          <div class="add__container">
+            <div class="add__tabs--container">
+              <button
+                class="add__tab add__tab--customer add__tab--active"
+                data-tab="customer"
+              >
+                Customer
+              </button>
+              <button class="add__tab add__tab--car" data-tab="car">Car</button>
+            </div>
+            <div
+              class="add__content add__content--customer add__content--active"
+            >
+              <h2 class="add__content--header">Add/Update Customers</h2>
+
+              <form action="" class="add__content--form" id="addCustomer">
+                <input type="hidden" id="customerId" />
+                <div class="add__name--container">
+                  <div class="add__name--label">
+                    <label class="add__label" for="firstName">First Name</label>
+                    <input
+                      type="text"
+                      class="add__firstName add__input"
+                      id="firstName"
+                      placeholder="Customer's Fisrt Name"
+                      required
+                    />
+                  </div>
+                  <div class="add__name--label">
+                    <label class="add__label" for="lastName">Last Name</label>
+                    <input
+                      type="text"
+                      class="add__lastName add__input"
+                      id="lastName"
+                      placeholder="Customer's Last Name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="add__name--label">
+                  <label class="add__label" for="licenseNumber"
+                    >License Number</label
+                  >
+                  <input
+                    type="text"
+                    class="add__input add__License"
+                    placeholder="Customer's License Number"
+                    id="licenseNumber"
+                    required
+                  />
+                </div>
+                <button class="add__button" id="addButton">
+                  Add/Update Customer
+                </button>
+              </form>
+            </div>
+
+            <div class="add__content add__content--car">
+              <h2 class="add__content--header">Add/Update Cars</h2>
+              <form action="" class="add__content--form" id="addCar">
+                <input type="hidden" id="carId" />
+                <div class="add__name--container">
+                  <div class="add__name--label">
+                    <label class="add__label" for="carBrand">Brand</label>
+                    <input
+                      type="text"
+                      class="add__lastName add__input"
+                      id="carBrand"
+                      placeholder="Car's Brand"
+                      required
+                    />
+                  </div>
+                  <div class="add__name--label">
+                    <label class="add__label" for="carModel">Model</label>
+                    <input
+                      type="text"
+                      class="add__firstName add__input"
+                      id="carModel"
+                      placeholder="Car's Model"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="add__name--label">
+                  <label class="add__label" for="carColor">Color</label>
+                  <input
+                    type="text"
+                    class="add__input add__License"
+                    placeholder="Car's Color"
+                    id="carColor"
+                    required
+                  />
+                </div>
+
+                <div class="add__name--label">
+                  <label class="add__label" for="dailyRate">Daily Rate</label>
+                  <input
+                    type="number"
+                    class="add__input add__License"
+                    placeholder="Car's Daily Rate"
+                    id="dailyRate"
+                    required
+                  />
+                </div>
+                <button type="submit" class="add__button" id="addButtonCar">
+                  Add/Update Car
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

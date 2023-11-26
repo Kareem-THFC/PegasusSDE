@@ -1,0 +1,102 @@
+.footer{
+    background-color: rgb(23, 23, 23);
+    padding: 10rem 0;
+    font-size: 1.4rem;
+
+    @include respond(tab-port){
+        padding: 8rem 0;
+    }
+
+    &__logo-box{
+        text-align: center;
+        margin-bottom: 8rem;
+
+        @include respond(tab-port){
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__logo{
+        width: 25rem;
+        height: auto;
+    }
+
+    &__navigation{
+        border-top: 0.2rem solid $color-maroon;
+        padding-top : 2.5rem;
+        display: inline-block;
+
+        @include respond(tab-port){
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__list{
+        list-style: none;
+    }
+
+    &__item{
+        display: inline-block;
+
+        &:not(:last-child){
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__link{
+        display: inline-block;
+
+        @include respond(tab-port){
+            border-bottom: 0;
+        }
+
+        &:visited,
+        &:link{
+            
+            color: $color-white-section;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding-bottom: 0.2rem;
+            border-bottom: 0.1rem solid $color-white-section;
+            transition: all 0.2s;
+
+            @include respond(tab-port){
+                border-bottom: 0;
+                &:last-child{
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+        &:hover,
+        &:active{
+            color: grey;
+            border-bottom: 0.1rem solid grey;
+            box-shadow: 0 1rem 2rem rgba($color-maroon , 0.25);
+            transform: scale(1.4rem);
+
+            @include respond(tab-port){
+                border-bottom: 0;
+
+                &:last-child{
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+    }
+
+    &__copyright{
+        color: $color-white-section;
+        border-top: 0.2rem solid $color-maroon;
+        padding-top : 2.5rem;
+        display: inline-block;
+        width: 83%;
+        text-align: center;
+        @include respond(tab-port){
+            width: 100%;
+            float: none;
+        }
+    }
+}

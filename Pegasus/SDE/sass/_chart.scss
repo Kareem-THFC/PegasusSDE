@@ -1,0 +1,28 @@
+.chart {
+  &__container {
+    width: 94.7%;
+    height: 49.6%;
+    padding: 0.2rem;
+    margin-top: 2rem;
+    background-color: $color-white;
+    border-inline: solid 0.5rem $color-maroon;
+  }
+
+  &__header {
+    color: $color-grey-100;
+    font-size: 2rem;
+  }
+
+  &__bar {
+    width: 70%;
+  }
+
+  & .bar {
+    --labels-size: 400px;
+  }
+
+  &__label {
+    color: $color-maroon;
+    margin-top: 1rem;
+  }
+}
