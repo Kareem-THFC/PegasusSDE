@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400&display=swap");
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    background-color: rgb(23, 23, 23);
+    color: rgb(23, 23, 23);
+    font-family: "Playfair Display", serif;
+    line-height: 1.7;
+}
+
+.book {
+    background-image: linear-gradient(105deg, rgba(83, 6, 7, 0.65) 0%, rgba(83, 6, 7, 0.87) 50%, rgba(23, 23, 23, 0.95) 50%, rgba(23, 23, 23, 0.65) 100%), url("book-img-city.jpg");
+    background-size: 100%;
+    object-fit: cover;
+    height: 80vh;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    margin: 7rem;
+    display: flex;
+    align-items: center;
+}
+
+.book__form {
+    width: 50%;
+    padding: 6rem;
+}
+
+.form {
+    display: block;
+}
+.form__input {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    font-family: inherit;
+    color: inherit;
+    background-color: rgba(194, 200, 186, 0.75);
+    border: none;
+    border-bottom: 4px solid transparent;
+    width: 90%;
+    display: block;
+    transition: all 0.3s;
+}
+.form__input::-webkit-input-placeholder {
+    color: rgb(23, 23, 23);
+}
+.form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 0.4rem solid #00092c;
+}
+.form__input:focus:invalid {
+    border-bottom: 0.4rem solid #3c2a21;
+}
+.form__group:not(:last-child) {
+    margin-bottom: 2rem;
+}
+.form__label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    color: rgb(23, 23, 23);
+    display: block;
+    transition: all 0.3s;
+}
+.form__input:placeholder-shown ~ .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3rem);
+}
+
+.heading-secondary {
+    font-size: 2.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 3rem;
+    background-image: linear-gradient(to right, #530607, #1a1010);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 0.2rem;
+    transition: all 0.2s ease-in-out;
+}
+.heading-secondary:hover {
+    transform: scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.heading-transparent {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.btn {
+    z-index: 0;
+}
+.btn, .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 2.5rem 4rem;
+    display: inline-block;
+    border-radius: 0;
+    border: solid rgb(0, 0, 0) 0.2rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.btn:active, .btn:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn--maroon {
+    background-color: #530607;
+    color: #c2c8ba;
+    word-spacing: 0.4rem;
+}
+.btn--maroon::after {
+    background-color: #530607;
+}
+.btn--cream {
+    background-color: #d5cea3;
+    color: #3c2a21;
+    word-spacing: 0.4rem;
+}
+.btn--cream::after {
+    background-color: #d5cea3;
+}
+.btn--red {
+    background-color: #4b0000;
+    color: #c2c8ba;
+    word-spacing: 0.4rem;
+}
+.btn--red::after {
+    background-color: #4b0000;
+}
+.btn--gold {
+    background-color: #8c672c;
+    color: #c2c8ba;
+    word-spacing: 0.4rem;
+}
+.btn--gold::after {
+    background-color: #8c672c;
+}
+.btn--white {
+    background-color: rgba(194, 200, 186, 0.85);
+    color: #530607;
+    word-spacing: 0.4rem;
+}
+.btn--white::after, .btn--white::before {
+    background-color: rgba(194, 200, 186, 0.85);
+}
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+.btn--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+}
+
+.btn-wide {
+    padding: 1.5rem 5.5rem;
+    height: 5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}/*# sourceMappingURL=main.css.map */

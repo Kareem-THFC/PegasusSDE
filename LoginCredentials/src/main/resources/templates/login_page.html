@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pegasus - Admin LogIn</title>
+  <link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}" />
+
+</head>
+<body>
+<div class="flex">
+  <div class="book">
+    <div class="book__form">
+      <form method="post" action="/login" th:object="${loginRequest}" class="form" >
+        <div class="u-margin-bottom-medium">
+          <h2 class="heading-secondary heading-transparent">Login</h2>
+        </div>
+
+        <div class="form__group">
+          <input
+                  type="text"
+                  class="form__input"
+                  required
+                  placeholder="Username"
+                  id="name"
+                  th:id="name"
+                  th:name="username"
+                  th:field="*{login}"
+          />
+          <label for="name" class="form__label" th:for="name">Username</label>
+        </div>
+
+        <div class="form__group">
+          <input
+                  type="password"
+                  class="form__input"
+                  required
+                  placeholder="Password"
+                  id="password"
+                  th:id="password"
+                  th:name="password"
+                  th:field="*{password}"
+          />
+          <label for="password" class="form__label" th:for="password">Password</label>
+        </div>
+
+        <div class="form__group">
+          <button type="submit" class="btn btn--white btn-wide">Login &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
